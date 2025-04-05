@@ -22,12 +22,13 @@ def get_char_num(text):
 def sort_chars(chars):
     sorted = []
 
-    def sort_on(dict):
-        return dict["char"]
-
     for char in chars:
-        sorted.append({"char": char, "num": chars[char]})
+        if char.isalpha():
+            sorted.append({"char": char, "num": chars[char]})
 
-    sorted.sort(key=sort_on)
+    def sort_on(dict):
+        return dict["num"]
+
+    sorted.sort(reverse=True, key=sort_on)
 
     return sorted
