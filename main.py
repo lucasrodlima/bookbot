@@ -6,6 +6,8 @@ def main():
 
     num_words = len(text.split())
 
+    print("============ BOOKBOT ============")
+
     print(f"{num_words} words found in the document")
 
     chars = get_char_num(text)

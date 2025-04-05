@@ -19,10 +19,15 @@ def get_char_num(text):
     return chars
 
 
-# def test(string):
-#     dict = get_char_num(string)
-#
-#     print(dict)
-#
-#
-# test("abccccddd     ff")
+def sort_chars(chars):
+    sorted = []
+
+    def sort_on(dict):
+        return dict["char"]
+
+    for char in chars:
+        sorted.append({"char": char, "num": chars[char]})
+
+    sorted.sort(key=sort_on)
+
+    return sorted
